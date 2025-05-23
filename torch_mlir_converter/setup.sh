@@ -1,0 +1,9 @@
+python3 -m venv mlir_venv
+source mlir_venv/bin/activate
+pip install torch-mlir -f https://github.com/llvm/torch-mlir-release/releases/expanded_assets/dev-wheels
+
+# pip install --pre torch torchvision --index-url https://download.pytorch.org/whl/nightly/cpu
+# pip install --pre torch-mlir -f https://llvm.github.io/torch-mlir/package-index/
+
+python -c "import torch_mlir; print(torch_mlir.__file__)"
+

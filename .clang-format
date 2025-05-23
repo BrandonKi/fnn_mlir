@@ -1,0 +1,3 @@
+BasedOnStyle: LLVM
+AlwaysBreakTemplateDeclarations: Yes
+IndentWidth: 4
