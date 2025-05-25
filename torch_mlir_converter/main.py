@@ -3,19 +3,19 @@ import torch_mlir
 from torch_mlir.fx import export_and_import
 
 # DIALECT = "torch"
-# DIALECT = "linalg-on-tensors"
+DIALECT = "linalg-on-tensors"
 # DIALECT = "tosa"
 # DIALECT = "stablehlo"
-DIALECT = "raw"
+# DIALECT = "raw"
 
 # BIAS = True
 BIAS = False
 class SimpleModel(torch.nn.Module):
     def __init__(self):
         super().__init__()
-        self.linear1 = torch.nn.Linear(10, 20, bias=BIAS)
+        self.linear1 = torch.nn.Linear(3, 5, bias=BIAS)
         self.relu = torch.nn.ReLU()
-        self.linear2 = torch.nn.Linear(20, 5, bias=BIAS)
+        self.linear2 = torch.nn.Linear(5, 3, bias=BIAS)
         
     def forward(self, x):
         x = self.linear1(x)
@@ -25,7 +25,7 @@ class SimpleModel(torch.nn.Module):
 def main():
     model = SimpleModel()
     model.eval()
-    input_tensor = torch.randn(1, 10)
+    input_tensor = torch.randn(1, 3)
     mlir_module = export_and_import(
         model,
         input_tensor,
