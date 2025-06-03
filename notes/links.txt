@@ -1,0 +1,19 @@
+# PyTorch
+https://pytorch.org/
+https://github.com/pytorch/pytorch
+
+# Torch-MLIR
+https://github.com/llvm/torch-mlir
+
+# StableHLO
+https://github.com/openxla/stablehlo
+
+# LLVM
+https://github.com/llvm/llvm-project
+
+# Verilog2Factorio
+https://github.com/Redcrafter/verilog2factorio
+
+# Yosys
+https://github.com/YosysHQ/yosys
+
