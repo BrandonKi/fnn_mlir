@@ -41,4 +41,6 @@ source run.sh
 
 ```bash
 ln -s build/compile_commands.json .
+
+clear && pushd build && make -j16 && popd && source run.sh
 ```
