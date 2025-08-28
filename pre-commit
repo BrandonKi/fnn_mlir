@@ -1,0 +1,9 @@
+#!/bin/sh
+
+echo "Running git-clang-format on staged changes..."
+git clang-format --quiet HEAD
+
+if [ $? -ne 0 ]; then
+    echo "clang-format made changes. Restaging files..."
+    git diff --name-only | xargs git add
+fi
